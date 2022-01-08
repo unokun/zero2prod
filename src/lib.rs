@@ -6,7 +6,6 @@ async fn health_check() -> HttpResponse {
     HttpResponse::Ok().finish()
 }
 
-// #[tokio::main]
 pub fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
     let server = HttpServer::new(|| {
         App::new()
@@ -14,7 +13,6 @@ pub fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
     })
     .listen(listener)?
     .run();
-    // .await
 
     Ok(server)
 }
