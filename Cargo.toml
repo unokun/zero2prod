@@ -28,3 +28,9 @@ reqwest = "0.11"
 # There is _some_ turbulence when working with betas.
 actix-web = "4.0.0-beta.19"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+# We need the optional `derive` feature to use `serde`'s procedural macros: 
+# `#[derive(Serialize)]` and `#[derive(Deserialize)]`.
+# The feature is not enabled by default to avoid pulling in 
+# unnecessary dependencies for projects that do not need it.
+serde = { version = "1", features = ["derive"]}
