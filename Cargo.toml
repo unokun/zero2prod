@@ -6,3 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# We are using the latest beta release of actix-web
+# that relies on tokio 1.x.x
+# There is _some_ turbulence when working with betas.
+actix-web = "4.0.0-beta.19"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
